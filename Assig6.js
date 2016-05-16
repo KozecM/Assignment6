@@ -24,7 +24,7 @@ app.get('/post_get', function(req, res){
   }
   var context = {};
   context.Listdata = stuff;
-  res.render('post_get', status, context);
+  res.render('post_get' type, context);
 });
 
 app.post('/post_get')
