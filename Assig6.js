@@ -26,7 +26,7 @@ app.get('/post_get', function(req, res){
   res.render('post_get', context);
 });
 
-app.post(/post_get)
+app.post('/post_get')
 
 app.use(function(req,res){
   res.status(404);
