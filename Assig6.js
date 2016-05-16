@@ -33,6 +33,7 @@ app.post('post_get', function(req, res){
   for(var f in req.body){
     things.push({'name': f, 'value':req.body[f]})
   }
+  console.log(req.body);
   container.Listdata = things;
   res.render('post_get', container);
 })
