@@ -22,9 +22,8 @@ app.get('/post_get', function(req, res){
   for (var f in req.query){
     stuff.push({'name': f, 'value':req.query[f]});
   }
-  var context = {};
-  context.Listdata = stuff;
-  res.render('post_get', type, context);
+  type.Listdata = stuff;
+  res.render('post_get', type);
 });
 
 app.post('/post_get')
