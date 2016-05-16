@@ -26,13 +26,6 @@ app.get('/post_get', function(req, res){
   res.render('post_get', type);
 });
 
-app.post('/post_get')
-
-app.use(function(req,res){
-  res.status(404);
-  res.render('404');
-});
-
 app.post('post_get', function(req, res){
   var things = [];
   var container = {};
@@ -43,6 +36,12 @@ app.post('post_get', function(req, res){
   container.Listdata = things;
   res.render('post_get', container);
 })
+
+app.use(function(req,res){
+  res.status(404);
+  res.render('404');
+});
+
 
 app.use(function(err, req, res, next){
   console.error(err.stack);
