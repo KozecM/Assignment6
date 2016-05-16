@@ -33,6 +33,17 @@ app.use(function(req,res){
   res.render('404');
 });
 
+app.post('post_get', function(req, res){
+  var things = [];
+  var container = {};
+  container.status = "POST"
+  for(var f in req.body){
+    things.push({'name': f, 'value':req.body[f]})
+  }
+  container.Listdata = things;
+  res.render('post_get', container);
+})
+
 app.use(function(err, req, res, next){
   console.error(err.stack);
   res.type('plain/text');
