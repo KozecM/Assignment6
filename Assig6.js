@@ -1,3 +1,4 @@
+var http = require('http');
 var express = require('express');
 
 var app = express();
@@ -9,7 +10,7 @@ app.use(bodyParser.json());
 
 app.engine('handlebars', handlebars.engine);
 app.set('view engine', 'handlebars');
-app.set('port', 3000);
+app.set('port', 3001);
 
 app.get('/',function(req,res){
   res.render('home');
@@ -26,7 +27,7 @@ app.get('/post_get', function(req, res){
   res.render('post_get', type);
 });
 
-app.post('post_get', function(req, res){
+app.post('/post_get', function(req, res){
   var things = [];
   var container = {};
   container.status = "POST"
