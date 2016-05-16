@@ -19,12 +19,12 @@ app.get('/post_get', function(req, res){
   var stuff = []
   var type = {};
   type.status = "GET";
-  for (var f in req.query){
+  /for (var f in req.query){
     stuff.push({'name': f, 'value':req.query[f]});
   }
   var context = {};
   context.Listdata = stuff;
-  res.render('post_get', context);
+  res.render('post_get', status, context);
 });
 
 app.post('/post_get')
